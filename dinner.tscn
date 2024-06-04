@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqsfsqmj5kxkk"]
+
+[ext_resource type="PackedScene" uid="uid://don1kbvmsec03" path="res://meals.tscn" id="1_5gfib"]
+[ext_resource type="Script" path="res://dinner.gd" id="2_llss7"]
+
+[node name="dinner" instance=ExtResource("1_5gfib")]
+script = ExtResource("2_llss7")
+
+[node name="mealTag" parent="." index="1"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 160.0
+offset_bottom = 77.0
+text = "Dinner"
+
+[node name="calories" parent="." index="2"]
+offset_left = 454.0
+offset_top = 6.0
+offset_right = 710.0
+offset_bottom = 83.0
+
+[node name="selectedfood" parent="." index="3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0125
+anchor_top = 0.210938
+anchor_right = 0.990278
+anchor_bottom = 0.889063
+offset_top = 0.0
+offset_right = 0.0
+
+[node name="foodList" parent="." index="4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.910937
+anchor_right = 0.891667
+anchor_bottom = 0.966406
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="goback" parent="." index="5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0666667
+anchor_top = 0.90625
+anchor_right = 0.369444
+anchor_bottom = 0.960938
+offset_right = 8.0
+offset_bottom = 8.0

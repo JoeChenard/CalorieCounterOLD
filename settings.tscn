@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6pcwq8ueqg0q"]
+
+[ext_resource type="Theme" uid="uid://wqqukcnho2jr" path="res://assets/matrix_rhombus.tres" id="1_ch5ei"]
+[ext_resource type="Script" path="res://settings.gd" id="2_eo42f"]
+
+[node name="settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ch5ei")
+script = ExtResource("2_eo42f")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 3.0
+offset_right = 693.0
+offset_bottom = 609.0
+text = "Settings
+ 
+ 
+Height: 
+
+ 
+ 
+ 
+ 
+Age     Body Type
+"
+
+[node name="gender" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = 286.0
+offset_top = 454.0
+offset_right = 538.0
+offset_bottom = 533.0
+text = "Female"
+
+[node name="age" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 447.0
+offset_right = 208.0
+offset_bottom = 532.0
+
+[node name="feet" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 242.0
+offset_right = 212.0
+offset_bottom = 327.0
+suffix = "ft"
+
+[node name="inches" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 241.0
+offset_top = 245.0
+offset_right = 441.0
+offset_bottom = 330.0
+suffix = "in"
+
+[node name="back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 724.0
+offset_right = 255.0
+offset_bottom = 802.0
+text = "save & return"
+
+[connection signal="toggled" from="gender" to="." method="_on_gender_toggled"]
+[connection signal="value_changed" from="age" to="." method="_on_age_value_changed"]
+[connection signal="value_changed" from="feet" to="." method="_on_feet_value_changed"]
+[connection signal="value_changed" from="inches" to="." method="_on_inches_value_changed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

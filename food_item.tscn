@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=3 uid="uid://b1b4akm6fahe"]
+
+[ext_resource type="Theme" uid="uid://wqqukcnho2jr" path="res://assets/matrix_rhombus.tres" id="1_44t8i"]
+[ext_resource type="Script" path="res://fooditem.gd" id="2_0p6v4"]
+[ext_resource type="Texture2D" uid="uid://c3q1om8w5wxuy" path="res://assets/macros3.png" id="4_ay5pd"]
+[ext_resource type="Texture2D" uid="uid://doktr6fytystp" path="res://assets/macros4.png" id="4_oesbw"]
+[ext_resource type="Texture2D" uid="uid://c8sswlf7sbhef" path="res://assets/macros2.png" id="5_nmpa6"]
+[ext_resource type="Texture2D" uid="uid://dm5mi3pq4k47q" path="res://assets/macros0.png" id="6_j4abm"]
+[ext_resource type="Texture2D" uid="uid://ci0wwxkohtcie" path="res://assets/card.png" id="7_lvrvr"]
+[ext_resource type="Texture2D" uid="uid://dc61pcv8vhd5k" path="res://assets/garbage.png" id="8_jg1ub"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_yk83p"]
+
+[node name="foodItem" type="Control"]
+layout_mode = 3
+anchor_right = 0.779167
+anchor_bottom = 1.0
+offset_bottom = -874.0
+theme = ExtResource("1_44t8i")
+script = ExtResource("2_0p6v4")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_vertical_guides_ = [18.0]
+
+[node name="foodname" type="Label" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = -1.0
+offset_right = 622.0
+offset_bottom = 76.0
+text = "foodname "
+autowrap_mode = 1
+
+[node name="input" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 71.0
+offset_right = 268.0
+offset_bottom = 156.0
+theme_override_icons/updown = SubResource("ImageTexture_yk83p")
+step = 0.01
+
+[node name="nutrients" type="Label" parent="."]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 158.0
+offset_right = 583.0
+offset_bottom = 389.0
+text = "cal
+protein
+carbs
+fat"
+
+[node name="Macros1" type="Sprite2D" parent="."]
+position = Vector2(40, 246)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_nmpa6")
+
+[node name="Macros3" type="Sprite2D" parent="."]
+position = Vector2(40, 346)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_oesbw")
+
+[node name="Macros2" type="Sprite2D" parent="."]
+position = Vector2(40, 296)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_ay5pd")
+
+[node name="Macros0" type="Sprite2D" parent="."]
+position = Vector2(40, 196)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_j4abm")
+
+[node name="units" type="Label" parent="."]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 76.0
+offset_right = 434.0
+offset_bottom = 153.0
+text = "units"
+
+[node name="icon" type="Sprite2D" parent="."]
+position = Vector2(64, 120)
+scale = Vector2(3, 3)
+
+[node name="Card" type="Sprite2D" parent="."]
+modulate = Color(0.180392, 0.619608, 0.0745098, 1)
+position = Vector2(304.75, 390)
+scale = Vector2(7.18125, 0.0535714)
+texture = ExtResource("7_lvrvr")
+
+[node name="trash" type="Button" parent="."]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 314.0
+offset_right = 576.0
+offset_bottom = 379.0
+icon = ExtResource("8_jg1ub")
+
+[connection signal="value_changed" from="input" to="." method="_on_input_value_changed"]
+[connection signal="pressed" from="trash" to="." method="_on_trash_pressed"]

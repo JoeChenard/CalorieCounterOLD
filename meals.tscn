@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://don1kbvmsec03"]
+
+[ext_resource type="Theme" uid="uid://wqqukcnho2jr" path="res://assets/matrix_rhombus.tres" id="1_j8fvl"]
+[ext_resource type="Script" path="res://meals.gd" id="2_0u2kx"]
+[ext_resource type="Texture2D" uid="uid://ci0wwxkohtcie" path="res://assets/card.png" id="4_50l2o"]
+[ext_resource type="PackedScene" uid="uid://pjg7ifcd85fj" path="res://macros.tscn" id="4_mokxa"]
+
+[node name="meals" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 3.0
+offset_right = -1.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_j8fvl")
+script = ExtResource("2_0u2kx")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.461111
+anchor_top = 0.883594
+anchor_right = 1.02361
+anchor_bottom = 0.989844
+metadata/_edit_use_anchors_ = true
+
+[node name="Card" type="Sprite2D" parent="Control"]
+modulate = Color(0.207843, 0, 0.415686, 1)
+position = Vector2(203, 72)
+scale = Vector2(4.1625, 1)
+texture = ExtResource("4_50l2o")
+
+[node name="mealTag" type="Label" parent="."]
+layout_mode = 0
+offset_left = 26.0
+offset_top = -5.0
+offset_right = 186.0
+offset_bottom = 72.0
+text = "Meals
+"
+
+[node name="calories" type="Label" parent="."]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 3.0
+offset_right = 676.0
+offset_bottom = 80.0
+text = "calories"
+
+[node name="selectedfood" type="ScrollContainer" parent="."]
+layout_mode = 0
+anchor_top = 0.212
+anchor_right = 0.996
+anchor_bottom = 0.882813
+offset_top = 25.64
+offset_right = -0.120056
+metadata/_edit_use_anchors_ = true
+
+[node name="box" type="VBoxContainer" parent="selectedfood"]
+layout_mode = 2
+
+[node name="foodList" type="MenuButton" parent="."]
+layout_mode = 0
+anchor_left = 0.544445
+anchor_top = 0.907812
+anchor_right = 0.948611
+anchor_bottom = 0.969531
+text = "Food List"
+metadata/_edit_use_anchors_ = true
+
+[node name="goback" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.0708333
+anchor_top = 0.905469
+anchor_right = 0.465278
+anchor_bottom = 0.970312
+text = "go back"
+metadata/_edit_use_anchors_ = true
+
+[node name="Macros" parent="." instance=ExtResource("4_mokxa")]
+offset_left = 39.0
+offset_top = 98.0
+offset_right = 39.0
+offset_bottom = 98.0
+
+[connection signal="pressed" from="foodList" to="." method="_on_food_list_pressed"]
+[connection signal="pressed" from="goback" to="." method="_on_goback_pressed"]

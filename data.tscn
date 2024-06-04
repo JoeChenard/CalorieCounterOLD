@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8avynmahnewj"]
+
+[ext_resource type="Theme" uid="uid://wqqukcnho2jr" path="res://assets/matrix_rhombus.tres" id="1_lqnvl"]
+[ext_resource type="Script" path="res://data.gd" id="2_30gch"]
+[ext_resource type="Texture2D" uid="uid://ci0wwxkohtcie" path="res://assets/card.png" id="3_q4iar"]
+
+[node name="data" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lqnvl")
+script = ExtResource("2_30gch")
+
+[node name="back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 15.0
+offset_right = 328.0
+offset_bottom = 93.0
+text = "Go back"
+
+[node name="export" type="Button" parent="."]
+layout_mode = 0
+offset_left = 370.0
+offset_top = 15.0
+offset_right = 606.0
+offset_bottom = 93.0
+text = "Export"
+
+[node name="Card" type="Sprite2D" parent="."]
+modulate = Color(0.533333, 0.0627451, 0, 1)
+position = Vector2(195.5, 153.75)
+scale = Vector2(4.6125, 0.665178)
+texture = ExtResource("3_q4iar")
+
+[node name="date" type="MenuButton" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 116.0
+offset_right = 372.0
+offset_bottom = 195.0
+text = "Change date"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -289.0
+offset_top = -33.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 2
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="export" to="." method="_on_export_pressed"]

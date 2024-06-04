@@ -1,0 +1,246 @@
+[gd_scene load_steps=24 format=3 uid="uid://dfu7427l7m78b"]
+
+[ext_resource type="Theme" uid="uid://wqqukcnho2jr" path="res://assets/matrix_rhombus.tres" id="1_dsfcu"]
+[ext_resource type="Script" path="res://main.gd" id="2_vo3ep"]
+[ext_resource type="Texture2D" uid="uid://dt4nc5753p17b" path="res://assets/meals1.png" id="3_81s2y"]
+[ext_resource type="Texture2D" uid="uid://ci0wwxkohtcie" path="res://assets/card.png" id="3_f82k6"]
+[ext_resource type="Texture2D" uid="uid://dsjyvvfr8r5d3" path="res://assets/meals2.png" id="4_qdv4g"]
+[ext_resource type="Texture2D" uid="uid://i55qahsq4pf" path="res://assets/meals3.png" id="5_o8tvg"]
+[ext_resource type="Texture2D" uid="uid://ckmcksujpkkjt" path="res://assets/meals4.png" id="6_yqflm"]
+[ext_resource type="PackedScene" uid="uid://pjg7ifcd85fj" path="res://macros.tscn" id="7_ayeqq"]
+[ext_resource type="Texture2D" uid="uid://no7bohapcn25" path="res://assets/scale.png" id="8_2pymy"]
+[ext_resource type="Texture2D" uid="uid://ci82wx7d88scs" path="res://assets/cup1.png" id="8_tnvn5"]
+[ext_resource type="Texture2D" uid="uid://c3sq7q38s1qr4" path="res://assets/cup2.png" id="9_ti13v"]
+[ext_resource type="Texture2D" uid="uid://byh5gciqq82ou" path="res://assets/cup3.png" id="10_3tvqo"]
+[ext_resource type="Texture2D" uid="uid://c20pfk5n1umyv" path="res://assets/cup4.png" id="11_f3mmv"]
+[ext_resource type="Texture2D" uid="uid://befff24wctnbe" path="res://assets/cup5.png" id="12_vf50s"]
+[ext_resource type="Texture2D" uid="uid://df527cms47y2e" path="res://assets/cup6.png" id="13_5ntva"]
+[ext_resource type="Texture2D" uid="uid://b3huwtkobqu1n" path="res://assets/cup7.png" id="14_6ql0w"]
+[ext_resource type="Texture2D" uid="uid://cwkfkf3yo2qh" path="res://assets/cup8.png" id="15_5kq2o"]
+[ext_resource type="Texture2D" uid="uid://ctvok4s1qseg6" path="res://assets/cup9.png" id="16_o8fah"]
+[ext_resource type="Texture2D" uid="uid://bevph3wq3wglt" path="res://assets/cup10.png" id="17_q263s"]
+[ext_resource type="AudioStream" uid="uid://dnjerh38rhbkr" path="res://assets/sfx/proud.ogg" id="20_r0qeu"]
+[ext_resource type="AudioStream" uid="uid://by0j2becbbtsn" path="res://assets/sfx/goodjob.ogg" id="21_3miu2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iolgo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_tnvn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ti13v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3tvqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_f3mmv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vf50s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_5ntva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_6ql0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_5kq2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_o8fah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_q263s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SystemFont" id="SystemFont_lgge3"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_dsfcu")
+script = ExtResource("2_vo3ep")
+
+[node name="Card" type="Sprite2D" parent="."]
+modulate = Color(0.533333, 0.0627451, 0, 1)
+position = Vector2(156.5, 329)
+scale = Vector2(3.4875, 0.625)
+texture = ExtResource("3_f82k6")
+
+[node name="Card2" type="Sprite2D" parent="."]
+modulate = Color(0.192157, 0.192157, 0.192157, 1)
+position = Vector2(526, 329)
+scale = Vector2(3.8, 0.625)
+texture = ExtResource("3_f82k6")
+
+[node name="addfood" type="Button" parent="."]
+layout_mode = 0
+offset_left = 305.0
+offset_top = 1015.0
+offset_right = 659.0
+offset_bottom = 1093.0
+text = "Change Menu"
+
+[node name="meals" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 650.0
+offset_right = 690.0
+offset_bottom = 995.0
+focus_mode = 0
+item_count = 4
+icon_scale = 1.25
+item_0/text = "Breakfast"
+item_0/icon = ExtResource("3_81s2y")
+item_1/text = "Lunch"
+item_1/icon = ExtResource("4_qdv4g")
+item_2/text = "Dinner"
+item_2/icon = ExtResource("5_o8tvg")
+item_3/text = "Snacks"
+item_3/icon = ExtResource("6_yqflm")
+
+[node name="Macros" parent="." instance=ExtResource("7_ayeqq")]
+layout_mode = 1
+offset_left = 19.0
+offset_top = 94.0
+offset_right = 19.0
+offset_bottom = 94.0
+
+[node name="log" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 1014.0
+offset_right = 215.0
+offset_bottom = 1093.0
+text = " Log"
+
+[node name="calories" type="Label" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 294.0
+offset_right = 302.0
+offset_bottom = 371.0
+text = "1000Kcal"
+horizontal_alignment = 1
+
+[node name="weight" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 384.0
+offset_right = 532.0
+offset_bottom = 521.0
+max_value = 1000.0
+step = 0.1
+alignment = 2
+suffix = "lbs"
+
+[node name="Scale" type="Sprite2D" parent="weight"]
+position = Vector2(403, 71)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("8_2pymy")
+
+[node name="statistics" type="Button" parent="."]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 556.0
+offset_right = 250.0
+offset_bottom = 634.0
+text = "Data"
+
+[node name="water" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = -138.0
+offset_top = 408.0
+offset_right = 62.0
+offset_bottom = 493.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="water"]
+position = Vector2(248, 35)
+scale = Vector2(1.98438, 2.10938)
+sprite_frames = SubResource("SpriteFrames_iolgo")
+
+[node name="Label" type="Label" parent="water"]
+layout_mode = 0
+offset_left = 217.0
+offset_top = 3.0
+offset_right = 281.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.890196, 0, 0.109804, 1)
+text = "0"
+horizontal_alignment = 1
+
+[node name="settings" type="Button" parent="."]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 558.0
+offset_right = 650.0
+offset_bottom = 636.0
+text = "Settings"
+
+[node name="BMR" type="Label" parent="."]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 294.0
+offset_right = 678.0
+offset_bottom = 371.0
+text = "0Kcal"
+horizontal_alignment = 1
+
+[node name="title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_right = 487.0
+offset_bottom = 77.0
+text = "Calorie Counter"
+
+[node name="Card3" type="Sprite2D" parent="."]
+modulate = Color(0.180392, 0.619608, 0.0745098, 1)
+position = Vector2(336, 329)
+rotation = 0.610865
+scale = Vector2(0.0413644, 0.899515)
+texture = ExtResource("3_f82k6")
+
+[node name="proud" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_r0qeu")
+
+[node name="goodjob" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_3miu2")
+
+[node name="debug" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -707.0
+offset_top = -35.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/line_spacing = -14
+theme_override_fonts/font = SubResource("SystemFont_lgge3")
+theme_override_font_sizes/font_size = 25
+text = "Ver. 1.3.1"
+horizontal_alignment = 2
+autowrap_mode = 1
+
+[connection signal="pressed" from="addfood" to="." method="_on_addfood_pressed"]
+[connection signal="item_selected" from="meals" to="." method="_on_meals_item_selected"]
+[connection signal="pressed" from="log" to="." method="_on_log_pressed"]
+[connection signal="value_changed" from="weight" to="." method="_on_weight_value_changed"]
+[connection signal="pressed" from="statistics" to="." method="_on_statistics_pressed"]
+[connection signal="value_changed" from="water" to="." method="_on_water_value_changed"]
+[connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]

@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://pjg7ifcd85fj"]
+
+[ext_resource type="Theme" uid="uid://wqqukcnho2jr" path="res://assets/matrix_rhombus.tres" id="1_31vet"]
+[ext_resource type="Script" path="res://macros.gd" id="2_lv0pl"]
+[ext_resource type="Texture2D" uid="uid://s8mdao1eff7p" path="res://assets/macros0.svg" id="2_ly20o"]
+[ext_resource type="Texture2D" uid="uid://dpk2cgagesr45" path="res://assets/macros3.svg" id="3_xy6mx"]
+[ext_resource type="Texture2D" uid="uid://bxmdr50h6u28p" path="res://assets/macros2.svg" id="4_btajm"]
+[ext_resource type="Texture2D" uid="uid://cntfmoxfdxsvc" path="res://assets/macros1.svg" id="5_e0u81"]
+
+[node name="Macros" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_31vet")
+script = ExtResource("2_lv0pl")
+
+[node name="fat" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+fill_mode = 5
+texture_under = ExtResource("2_ly20o")
+texture_progress = ExtResource("3_xy6mx")
+
+[node name="carbs" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+fill_mode = 5
+texture_progress = ExtResource("4_btajm")
+
+[node name="protein" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 159.0
+offset_bottom = 161.0
+fill_mode = 5
+texture_progress = ExtResource("5_e0u81")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 171.0
+offset_top = -6.0
+offset_right = 458.0
+offset_bottom = 222.0
+text = "stsd
+sdfsdf
+sdfsdf"

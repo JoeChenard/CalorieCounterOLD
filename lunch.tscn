@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://dghavfe5ynt01"]
+
+[ext_resource type="PackedScene" uid="uid://don1kbvmsec03" path="res://meals.tscn" id="1_nq8ve"]
+[ext_resource type="Script" path="res://lunch.gd" id="2_v6tde"]
+
+[node name="lunch" instance=ExtResource("1_nq8ve")]
+script = ExtResource("2_v6tde")
+
+[node name="mealTag" parent="." index="1"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 160.0
+offset_bottom = 77.0
+text = "Lunch
+"
+
+[node name="calories" parent="." index="2"]
+offset_left = 453.0
+offset_top = 2.0
+offset_right = 709.0
+offset_bottom = 79.0
+
+[node name="selectedfood" parent="." index="3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0180556
+anchor_top = 0.21875
+anchor_right = 0.990278
+anchor_bottom = 0.885938
+offset_top = 0.0
+offset_right = 0.0
+
+[node name="foodList" parent="." index="4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.508333
+anchor_top = 0.9125
+anchor_right = 0.9
+anchor_bottom = 0.967969
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="goback" parent="." index="5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.075
+anchor_top = 0.914063
+anchor_right = 0.377778
+anchor_bottom = 0.96875
+offset_right = 8.0
+offset_bottom = 8.0
